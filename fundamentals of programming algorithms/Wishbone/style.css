@@ -1,0 +1,104 @@
+.container { width: min(1168px, 100% - 2 * var(--gutter)); margin-inline: auto; }
+.section { padding-block: var(--section); }
+.eyebrow { color: var(--muted); font-size: var(--text-small); line-height: 1.4; letter-spacing: 2px; text-transform: uppercase; }
+.button, .text-link { display: inline-block; padding: 10px 24px; border-radius: 14px; white-space: nowrap; }
+.button { background: var(--ink); color: var(--paper); }
+.button:hover { background: var(--body); }
+.text-link:hover, .nav a:not(.button):hover { text-decoration: underline; text-underline-offset: 4px; }
+
+/* Шапка: внешний flex разносит логотип и меню, внутренний выстраивает ссылки. */
+.header-inner, .nav { display: flex; align-items: center; }
+.header-inner { min-height: 90px; justify-content: space-between; gap: 24px; }
+.logo { width: 220px; }
+.nav { justify-content: flex-end; flex-wrap: wrap; gap: 12px clamp(12px, 2.2vw, 32px); color: var(--ink); font-size: var(--text-small); }
+
+/* Первый экран: два flex-элемента, каждый занимает половину ширины. */
+.hero { display: flex; background: var(--sand); color: var(--ink); }
+.hero-content, .hero-image { flex: 0 0 50%; width: 50%; min-width: 0; }
+.hero-content { display: flex; align-items: center; justify-content: flex-end; padding: clamp(44px, 6vw, 90px) clamp(24px, 6.94vw, 100px); }
+.hero-copy { width: 520px; max-width: 100%; }
+.hero h1 { margin-block: 20px 18px; font-size: var(--text-hero); line-height: 1.09; }
+.hero-copy > p:not(.eyebrow) { color: var(--body); }
+.hero .text-link { margin-top: 29px; }
+.hero-image { aspect-ratio: 1; object-fit: cover; }
+
+/* О компании: заголовок и текст в двух колонках. */
+.firm { max-width: 768px; display: flex; align-items: flex-start; gap: 36px; }
+.firm h2, .team h2 { font-size: clamp(1.75rem, 2.3vw, 2rem); }
+.firm h2 { flex: 0 1 232px; }
+.firm-copy { flex: 1 1 480px; min-width: 0; }
+.firm-copy > p + p { margin-top: 10px; }
+.firm .person { margin-top: 18px; }
+.person { display: flex; align-items: center; gap: 30px; color: var(--ink); }
+.person img { flex: 0 0 84px; width: 84px; height: 84px; border: 3px solid var(--warm); border-radius: 50%; object-fit: cover; }
+.person small { display: block; color: var(--muted); font-size: var(--text-small); line-height: 1.2; }
+
+.scene { display: flex; justify-content: flex-end; align-items: center; min-height: clamp(320px, 41.67vw, 600px); padding-inline: clamp(20px, 4.2vw, 60px); background: var(--sand) center/cover no-repeat; }
+.scene-reeding { background-image: url("./assets/reeding.jpg"); }
+.scene-stairs { background-image: url("./assets/stairs.jpg"); }
+.scene-marble { background-image: url("./assets/marble.jpg"); }
+.scene-left { justify-content: flex-start; }
+.scene-caption { max-width: 300px; color: var(--ink); }
+.scene-caption .eyebrow { color: inherit; }
+
+.process { text-align: center; }
+.process h2 { margin-top: 12px; }
+.process-list, .project-list { display: flex; flex-wrap: wrap; gap: 20px; }
+.process-list { margin-top: 42px; }
+.process-list article { flex: 1 1 230px; padding-inline: 20px; }
+.process-list img { width: 117px; height: 102px; object-fit: contain; margin: 0 auto 15px; }
+.process-list p { margin-top: 10px; color: var(--muted); font-size: var(--text-small); }
+
+.clients { background: var(--body); color: var(--soft); }
+.clients .eyebrow { color: inherit; }
+.clients-inner { display: flex; align-items: center; gap: clamp(32px, 9vw, 130px); }
+.clients-copy { flex: 0 1 450px; }
+.clients-copy h2 { margin-bottom: 14px; }
+.clients-logos { display: flex; flex-wrap: wrap; justify-content: center; gap: 48px 64px; flex: 0 1 430px; }
+.clients-logos img { width: 128px; height: 70px; object-fit: contain; }
+
+.projects { background: var(--soft); color: var(--ink); }
+.projects-intro { max-width: 580px; margin-block: 15px 38px; color: var(--muted); }
+.project { flex: 1 1 220px; min-height: 460px; display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; padding: 36px 28px; background: var(--sand) center/cover no-repeat; }
+.project-one { background-image: linear-gradient(var(--soft), transparent 50%), url("./assets/project1.jpg"); }
+.project-two { background-image: linear-gradient(var(--soft), transparent 50%), url("./assets/project2.jpg"); }
+.project-three { background-image: linear-gradient(var(--soft), transparent 50%), url("./assets/project3.jpg"); }
+.projects-link { display: table; margin: 26px auto 0; }
+
+.team { display: flex; gap: clamp(32px, 5vw, 72px); }
+.team-copy { flex: 0 1 360px; }
+.team-copy > p { margin-block: 14px 20px; color: var(--muted); }
+.team-list { flex: 1 1 650px; display: flex; flex-wrap: wrap; gap: 34px 20px; }
+.team-list .person { flex: 1 1 235px; max-width: calc(50% - 10px); }
+
+.contact { background: var(--warm); color: var(--ink); }
+.contact-inner, .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.contact h2 { max-width: 570px; }
+.footer { padding-block: 56px; background: var(--soft); }
+.footer-inner { align-items: flex-end; }
+.footer p { margin-top: 18px; font-size: var(--text-small); color: var(--muted); }
+.socials { display: flex; align-items: center; gap: 20px; }
+.socials img { width: 24px; height: 24px; object-fit: contain; }
+
+/* На узком экране меняем направление Flexbox: ряд становится колонкой. */
+@media (max-width: 800px) {
+  .header-inner { align-items: flex-start; flex-direction: column; padding-block: 18px; gap: 12px; }
+  .nav { justify-content: flex-start; }
+  .hero, .firm, .team, .clients-inner { flex-direction: column; }
+  .hero-content, .hero-image { flex: none; width: 100%; }
+  .hero-content { justify-content: flex-start; padding-inline: var(--gutter); }
+  .hero-image { aspect-ratio: 4 / 3; }
+  .firm h2, .firm-copy, .clients-copy, .clients-logos, .team-copy, .team-list { flex: none; }
+  .clients-inner { align-items: flex-start; }
+  .clients-logos { justify-content: flex-start; gap: 24px; }
+  .team-list { width: 100%; }
+}
+
+@media (max-width: 540px) {
+  .contact-inner, .footer-inner { align-items: flex-start; flex-direction: column; }
+  .contact .text-link { padding-inline: 0; }
+  .team-list .person { max-width: none; }
+  .project { min-height: 360px; }
+  .scene { align-items: flex-end; padding-bottom: 20px; }
+  .scene-caption { padding: 10px 14px; border-radius: 6px; background: var(--sand); }
+}
